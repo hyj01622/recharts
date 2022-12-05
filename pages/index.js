@@ -14,22 +14,22 @@ const data = [
     name: 'Page C',
     hello: 2000,
   },
-  {
-    name: 'Page D',
-    hello: 2780,
-  },
-  {
-    name: 'Page E',
-    hello: 1890,
-  },
-  {
-    name: 'Page F',
-    hello: 2390,
-  },
-  {
-    name: 'Page G',
-    hello: 3490,
-  },
+  // {
+  //   name: 'Page D',
+  //   hello: 2780,
+  // },
+  // {
+  //   name: 'Page E',
+  //   hello: 1890,
+  // },
+  // {
+  //   name: 'Page F',
+  //   hello: 2390,
+  // },
+  // {
+  //   name: 'Page G',
+  //   hello: 3490,
+  // },
 ];
 
 const renderCustomizedLabel = (props) => {
@@ -53,6 +53,7 @@ class Example extends PureComponent {
           <YAxis
             tickLine={false}
             type='category'
+            tickCount={5}
             dataKey='name'
             width={100}
             tickFormatter={(value) => {
@@ -63,7 +64,7 @@ class Example extends PureComponent {
           />
           <CartesianGrid strokeDasharray='3 3' />
           <Tooltip />
-          <Bar layout='vertical' dataKey='hello' fill='#82ca9d'>
+          <Bar layout='vertical' dataKey='hello' fill='#82ca9d' barSize={20}>
             <LabelList dataKey='hello' position='insideRight' style={{ fill: 'white' }} />
             {/* <LabelList dataKey='hello' content={renderCustomizedLabel} position='insideRight' style={{ fill: 'white' }} /> */}
           </Bar>
@@ -76,6 +77,9 @@ class Example extends PureComponent {
 const Home = () => {
   return (
     <div style={{ width: '500px', height: '280px' }}>
+      <Example />
+      <Example />
+      <Example />
       <Example />
     </div>
   );
